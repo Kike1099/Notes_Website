@@ -1,0 +1,25 @@
+:root{
+    --background: #121212;
+    --font-color: #ffffff;
+    --secondary-background: #222222;
+}
+
+body{
+    margin: 0;
+    background-color: var(--background);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8em;
+}
+
+.navbar{
+    background-color: var(--secondary-background);
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
