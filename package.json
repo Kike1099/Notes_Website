@@ -1,0 +1,21 @@
+{
+  "name": "note_website",
+  "version": "1.0.0",
+  "description": "This is a website that allow us to create notes, this is part of the first case study of \"Ambiente Web Cliente Servidor - JN - II cuatrimestre 2024\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Nodejs",
+    "JavaScript"
+  ],
+  "author": "Enrique Rodriguez Amador",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
