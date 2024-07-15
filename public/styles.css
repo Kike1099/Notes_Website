@@ -21,9 +21,21 @@ body{
     font-size: 0.8em;
 }
 
+body::-webkit-scrollbar{
+    width: 9px;
+    background-color: var(--background);
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--primary-variant);
+    border-radius: 6px;
+    border-right: solid 1px rgb(0, 0, 0);
+
+}
+
 .navbar{
     background-color: var(--secondary-background);
-    margin: 0;
+    margin: 0px 0px 24px 0px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -80,7 +92,6 @@ body{
 
 .note_title{
     width: 100%;
-    margin-top: 8px;
     margin-bottom: 24px;
     background-color: var(--secondary-background);
     color: var(--font-color);
@@ -157,4 +168,54 @@ body{
     display: flex;
     justify-content: end;
     gap: 10px;
+}
+
+.note_tag{
+    width: 100%;
+    margin-bottom: 24px;
+    background-color: var(--secondary-background);
+    color: var(--font-color);
+    border: none;
+    border-bottom: solid 2px var(--primary-variant2);
+    padding: 8px 0px 4px 6px;
+    font-weight: 500;
+    font-size: 1.4em;
+    border-radius: 6px;
+    
+}
+
+.note_tag:hover{
+    border-bottom: solid 2px var(--primary-variant);
+    transition: 0.3s;
+    
+}
+
+.note_tag:focus{
+    outline: solid 2px var(--primary-variant);
+    border-bottom: 2px solid var(--secondary-background);
+    transition: 0s;
+}
+
+.note_tag::placeholder{
+    color: var(--font-color);
+    opacity: 0.6;
+}
+
+.grid-notes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.note{
+    background-color: var(--secondary-background);
+    color: var(--font-color);
+    border-radius: 6px;
+    border: 1.5px solid var(--primary-variant2);
+}
+
+.note:hover{
+    border: 1.5px solid var(--primary-variant);
+    transition: 0.3s;
+
 }
