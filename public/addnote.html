@@ -12,14 +12,21 @@
 <body>
     <nav class="navbar">
         <h1 class="titleNote">Notepad</h1>
-        <a href="addnote.html" class="enlace_add-note">Add Note</a>
+        <a href="index.html" class="enlace_cancel">Cancel</a>
     </nav>
-    <div class="grid-notes">
-        <div class="note">
-            <h3><%= note.title  %></h3>
+    <form action="" method="post" class="form">
+        <input class="note_title" type="text" placeholder="Add new title" required />
+        <br>
+        <textarea class="content_textarea" name="content" id="content" placeholder="Add a new note" required></textarea>
+        <br>
+        <div class="buttons-addnote">
+            <button class="btn-guardar">
+                Guardar
+            </button>
+            <a href="index.html" class="enlace_cancel">Cancel</a>
             
         </div>
 
-    </div>
+    </form>
 </body>
 </html>
