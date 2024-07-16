@@ -12,12 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const titleElement = document.createElement('h3');
                 titleElement.textContent = note.title;
+                titleElement.classList.add('preview-title');
 
                 const contentElement = document.createElement('p');
                 contentElement.textContent = note.content;
+                contentElement.classList.add('preview-content');
 
                 const tagsElement = document.createElement('p');
                 tagsElement.textContent = `Tags: ${note.tag.join(', ')}`;
+                tagsElement.classList.add('tag-element');
 
                 const updateDateElement = document.createElement('p');
                 updateDateElement.textContent = `Last Updated: ${new Date(note.updateDate).toLocaleString()}`;

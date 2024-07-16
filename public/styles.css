@@ -226,6 +226,7 @@ body::-webkit-scrollbar-thumb{
 
 .mynotes{
     margin-left: 10px;
+    font-size: 1.5em;
     
 }
 
@@ -245,4 +246,16 @@ body::-webkit-scrollbar-thumb{
 .notes-btns:hover{
     background-color: var(--primary-variant);
     transition: 0.3s;
+}
+
+.tag-element{
+    margin-top: 3em;
+}
+
+.preview-title{
+    font-size: 1.4em;
+}
+
+.preview-content{
+    font-size: 1.1em;
 }
