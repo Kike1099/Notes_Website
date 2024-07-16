@@ -14,8 +14,9 @@
         <h1 class="titleNote">Notepad</h1>
         <a href="index.html" class="enlace_cancel">Cancel</a>
     </nav>
-    <form action="/addnote" method="post" class="form">
-        <input class="note_title" type="text" placeholder="Add a title" required id="title" name="title" value="<%= note ? note.title : ;; %>"/>
+    <form action="/addnote" method="post" class="form" id="note-form">
+        <input type="hidden" id="note-id" name="id">
+        <input class="note_title" type="text" placeholder="Add a title" required id="title" name="title"/>
         <br>
         <textarea class="content_textarea" name="content" id="content" placeholder="Add a note" required></textarea>
         <input class="note_tag" type="text" placeholder="Add a tag. Example: Home, Groceries, etc." name="tag" id="tag" required />

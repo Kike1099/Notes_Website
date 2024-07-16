@@ -6,8 +6,8 @@
     --primary-variant2: #134D91;
     /* --primary-variant: #04b09f;
     --primary-variant2: #018786; */
-    --secondary-variant: #7701ff;
-    --secondary-variant2: #5f00cd;
+    --secondary-variant: #219ebc;
+    --secondary-variant2: #ffb703;
 }
 
 body{
@@ -203,19 +203,46 @@ body::-webkit-scrollbar-thumb{
 
 .grid-notes{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    padding: 6px 10px 0px 10px;
 }
 
 .note{
     background-color: var(--secondary-background);
     color: var(--font-color);
     border-radius: 6px;
-    border: 1.5px solid var(--primary-variant2);
+    outline: 1.5px solid var(--primary-variant2);
+    padding: 0px 6px 8px;
+    transition: 0.1s;
+    
 }
 
 .note:hover{
-    border: 1.5px solid var(--primary-variant);
-    transition: 0.3s;
+    outline: 2px solid var(--primary-variant);
+    transition: 0.1s;
 
+}
+
+.mynotes{
+    margin-left: 10px;
+    
+}
+
+
+.notes-btns{
+    background-color: var(--primary-variant2);
+    color: var(--font-color);
+    border: solid 1.5px var(--font-color);
+    border-radius: 6px;
+    padding: 4px 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    margin-right: 8px;
+    
+}
+
+.notes-btns:hover{
+    background-color: var(--primary-variant);
+    transition: 0.3s;
 }
