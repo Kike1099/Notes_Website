@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 editButton.classList.add('notes-btns');
                 editButton.textContent = 'Edit';
                 editButton.addEventListener('click', () => {
-                    window.location.href = `addnote.html?id=${note.id}&title=${encodeURIComponent(note.title, noteElement)}&content=${encodeURIComponent(note.content, noteElement)}&tag=${encodeURIComponent(note.tag.join(','), noteElement)}`;
+                    window.location.href = `editnote.html?id=${note.id}&title=${encodeURIComponent(note.title, noteElement)}&content=${encodeURIComponent(note.content, noteElement)}&tag=${encodeURIComponent(note.tag.join(','), noteElement)}`;
                 });
 
                 const deleteButton = document.createElement('button');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('tag').value = decodeURIComponent(tag);
     }
 
-    const form = document.getElementById('note-form');
+    const form = document.getElementById('note-form1');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const content = document.getElementById('content').value;
         const tag = document.getElementById('tag').value.split(',').map(tag => tag.trim());
 
-        const method = id ? 'PUT' : 'POST';
-        const url = id ? `/notes/${id}` : '/addnote';
+        const method = 'PUT';
+        const url = `/notes/${id}`;
 
         fetch(url, {
             method: method,
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'index.html';
             }
         })
-        .catch(error => console.error('Error al guardar la nota:', error));
+        .catch(error => console.error('Error updating note', error));
     });
 });
 
@@ -102,7 +102,7 @@ function deleteNote(noteId, noteElement) {
     })
     .then(response => {
         if (response.ok) {
-            noteElement.remove(); // Eliminar el elemento de la nota del DOM
+            noteElement.remove(); // 
             console.log('Note deleted successfully');
         } else {
             console.error('Error deleting the note');

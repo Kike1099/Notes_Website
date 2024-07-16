@@ -15,8 +15,8 @@
         <h1 class="titleNote">Notepad</h1>
         <a href="index.html" class="enlace_cancel">Cancel</a>
     </nav>
-    <form action="/addnote" method="post" class="form" id="note-form">
-        
+    <form action="" method="put" class="form" id="note-form1">
+        <input type="hidden" id="note-id" name="id">
         <input class="note_title" type="text" placeholder="Add a title" required id="title" name="title"/>
         <br>
         <textarea class="content_textarea" name="content" id="content" placeholder="Add a note" required></textarea>
@@ -24,7 +24,7 @@
         <div class="buttons-addnote">
             <a href="index.html" class="enlace_cancel">Cancel</a>
             <button class="btn-guardar" type="submit">
-                Save
+                Save Changes
             </button>
         </div>
         

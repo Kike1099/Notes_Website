@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-    res.json(notes); // Devolver todas las notas como JSON
+    res.json(notes); // 
 });
 
 app.use(express.static('public'));
@@ -40,26 +40,24 @@ app.post('/addnote', (req, res) => {
 });
 
 app.put('/notes/:id', (req, res) => {
-    const notesId = parseInt(req.params.id);
-    const noteIndex = notes.findIndex(note => note.id === notesId);
+    const noteId = parseInt(req.params.id);
+    const { title, content, tag } = req.body;
+    const noteIndex = notes.findIndex(note => note.id === noteId);
 
     if (noteIndex !== -1) {
-        notes[noteIndex].title = req.body.title || notes[noteIndex].title;
-        notes[noteIndex].content = req.body.content || notes[noteIndex].content;
-        notes[noteIndex].tag = req.body.tag ? req.body.tag.split(',').map(tag => tag.trim()) : notes[noteIndex].tag;
-        notes[noteIndex].updateDate = new Date();
+        notes[noteIndex] = {
+            id: noteId,
+            title: title,
+            content: content,
+            tag: tag,
+            updateDate: new Date()
+        };
 
-        res.status(200).json({
-            message: 'Note was not updated correctly, please try again!',
-            note: notes[noteIndex]
-        });
+        res.status(200).json({ message: 'Note updated successfully!' });
     } else {
-        
-        res.status(404).json({
-            message: 'Note was not found, refresh the website or create a new one!'
-        });
+        res.status(404).json({ message: 'Note not found!' });
     }
-})
+});
 
 app.delete('/notes/:id', (req, res) => {
     const notesId = parseInt(req.params.id);
